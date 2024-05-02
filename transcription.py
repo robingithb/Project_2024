@@ -11,9 +11,9 @@ from pydub import AudioSegment
 from dotenv import load_dotenv
 load_dotenv(dotenv_path=".env.local")
 
-openai.api_key = os.getenv("OPENAI_API_KEY", "")
+openai.api_key = "sk-proj-xowztUzddmOcEZG00YDrT3BlbkFJbYkxi3wLf0Y5rzACB8Mf"
 if openai.api_key == "":
-    openai.api_key = st.secrets["OPENAI_API_KEY"]
+    openai.api_key = "sk-proj-xowztUzddmOcEZG00YDrT3BlbkFJbYkxi3wLf0Y5rzACB8Mf"
 
 def transcribe(audio_file):
     transcript = openai.Audio.transcribe("whisper-1", audio_file, language="en")
